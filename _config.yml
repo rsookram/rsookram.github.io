@@ -1,0 +1,16 @@
+title: Rashad Sookram's Blog
+email: rashadsookram@gmail.com
+description: >-
+  Writing mostly about Android development.
+
+domain: rsookram.github.io
+url: https://rsookram.github.io
+baseurl: ""
+
+twitter_username: rashadsookram
+github_username:  rsookram
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
