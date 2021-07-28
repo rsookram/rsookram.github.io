@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Building Android Apps: Moving from Gradle to Bazel'
+description: "Bazel is a new build system developed by Google which allows for an alternative to Gradle for building Android apps. I'll show you how you can use Bazel to build your existing Gradle-based Android app."
 ---
 
 Originally posted
