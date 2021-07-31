@@ -7,13 +7,16 @@ domain: rsookram.github.io
 url: https://rsookram.github.io
 baseurl: ""
 
-twitter_username: rashadsookram
-github_username:  rsookram
-
 markdown: kramdown
-theme: minima
+
+minima:
+  social_links:
+    twitter: RashadSookram
+    github: rsookram
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 exclude:
   - 'vendor'
