@@ -8,11 +8,6 @@ baseurl: ""
 
 markdown: kramdown
 
-minima:
-  social_links:
-    twitter: RashadSookram
-    github: rsookram
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
