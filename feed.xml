@@ -33,10 +33,24 @@ layout: null
       {% assign post_title = post.title | smartify | strip_html | normalize_whitespace | xml_escape %}
 
       <title type="html">{{ post_title }}</title>
-      <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post_title }}" />
+      <link
+        href="{% if post.external_link %}{{ post.external_link }}{% else %}{{ post.url | absolute_url }}{% endif %}"
+        rel="alternate"
+        type="text/html"
+        title="{{ post_title }}" />
       <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
       <id>{{ post.id | absolute_url | xml_escape }}</id>
-      <content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}">{{ post.content | strip | xml_escape }}</content>
+      <content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}">
+          {% if post.blog %}
+            This post was published on {{ post.blog }}
+
+            {%- if post.external_link -%}
+              : <a href="{{ post.external_link }}">{{ post.external_link }}</a>
+            {%- endif -%}
+          {% else %}
+            {{ post.content | strip | xml_escape }}
+          {% endif %}
+      </content>
     </entry>
   {% endfor %}
 </feed>
